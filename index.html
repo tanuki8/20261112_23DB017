@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#17253b" />
+    <title>SKYBOUND — 横スクロールアクション</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="game.js" defer></script>
+  </head>
+  <body>
+    <main class="game-shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="Skybound ホーム">
+          <span class="brand-mark" aria-hidden="true">✦</span>
+          <span>SKYBOUND</span>
+        </a>
+        <p class="topbar-note">小さな冒険、大きな空。</p>
+        <button class="sound-button" id="restart-button" type="button" aria-label="最初からやり直す">
+          <span aria-hidden="true">↻</span> <span class="restart-label">やり直す</span>
+        </button>
+      </header>
+
+      <section class="game-card" aria-label="ゲーム画面">
+        <div class="game-hud">
+          <div class="hud-item">
+            <span class="hud-icon heart" aria-hidden="true">♥</span>
+            <span id="lives">× 3</span>
+          </div>
+          <div class="level-name"><span class="level-dot"></span> STAGE 01 <span class="level-divider">/</span> はじまりの草原</div>
+          <div class="hud-item coin-count"><span class="hud-icon" aria-hidden="true">●</span><span id="coins">0 / 8</span></div>
+        </div>
+
+        <div class="canvas-wrap">
+          <canvas id="game" width="960" height="540" aria-label="横スクロールアクションゲーム。左右キーで移動、スペースキーでジャンプ。">
+            このゲームを遊ぶには、Canvasに対応したブラウザが必要です。
+          </canvas>
+          <div class="start-hint" id="start-hint">
+            <span class="hint-key">←</span><span class="hint-key">→</span>で移動
+            <span class="hint-separator">·</span>
+            <span class="hint-key">SPACE</span>でジャンプ
+          </div>
+          <div class="game-message" id="game-message" hidden>
+            <span class="message-kicker">STAGE 01 CLEAR</span>
+            <strong>やったね！</strong>
+            <span>草原の向こうまでたどり着いた！</span>
+            <button id="play-again" type="button">もう一度あそぶ <span aria-hidden="true">↗</span></button>
+          </div>
+        </div>
+
+        <div class="game-footer">
+          <span><span class="footer-dot"></span> ゴールをめざそう</span>
+          <span class="desktop-controls">移動 <kbd>←</kbd> <kbd>→</kbd> <span class="control-gap"></span> ジャンプ <kbd>SPACE</kbd></span>
+          <span class="touch-note">画面のボタンで操作</span>
+        </div>
+      </section>
+
+      <footer class="page-footer">
+        <span>© SKYBOUND ADVENTURE</span>
+        <span>COLLECT ✦ · KEEP MOVING</span>
+      </footer>
+    </main>
+
+    <div class="touch-controls" aria-label="タッチ操作">
+      <button type="button" data-control="left" aria-label="左へ移動">←</button>
+      <button type="button" data-control="right" aria-label="右へ移動">→</button>
+      <button type="button" data-control="jump" aria-label="ジャンプ">↑</button>
+    </div>
+  </body>
+</html>
